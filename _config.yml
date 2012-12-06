@@ -63,7 +63,7 @@ JB :
   # Override this by defining an absolute path to assets here.
   # ex: 
   #   http://s3.amazonaws.com/yoursite/themes/watermelon
-  #   /assets
+  #  /assets
   #
   ASSET_PATH : false
 
