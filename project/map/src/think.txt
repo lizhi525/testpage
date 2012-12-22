@@ -1,0 +1,4 @@
+server
+players
+client --> server path
+server --> client path
