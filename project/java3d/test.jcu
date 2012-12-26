@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace_user>
+	<active_project>
+		<label>test</label>
+	</active_project>
+	<projects>
+		<project>
+			<label>test</label>
+			<showfiles>false</showfiles>
+			<folderitem>
+				<path>classes</path>
+			</folderitem>
+			<folderitem>
+				<path>src</path>
+			</folderitem>
+		</project>
+	</projects>
+	<symboltables>
+		<symboltable>
+			<path>..\..\..\..\Desktop\TestJava.java.sdk</path>
+			<symbols/>
+		</symboltable>
+	</symboltables>
+</workspace_user>
