@@ -14,12 +14,14 @@ import javax.swing.*;
 public class test extends Applet {
 	
 	public void init() {
-		JFrame frame = new JFrame();
-   		frame.setSize(400,400);
-   		frame.add(new TestJava());
+		//JFrame frame = new JFrame();
+   		//frame.setSize(400,400);
+   		//frame.add(new TestJava());
    		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-   		frame.setVisible(true);
-   		setSize(400,400);
+   		//frame.setVisible(true);
+   		//setSize(400,400);
+   		setLayout(new BorderLayout());
+   		add(BorderLayout.CENTER,new TestJava());
 	}
 
 	//public void paint(Graphics g) {
