@@ -6,20 +6,33 @@
 </head>
 <body>
 <a href="html3d.html">html3d.html</a><span> </span><a href="java3d.html">java3d.html</a><span> </span><a href="flash3d.html">flash3d.html</a><span> </span>
+<br/>
+<span id="tf"></span>
 <canvas id="c" width="465" height="465" style="background:#ffffff"></canvas>
 <script type="text/javascript">
 		cxt=document.getElementById("c").getContext("2d");
 		var vs = [];
-		for (var i=0; i < 1000;i++ ) {
-			vs.push([0, 0, 100 + i * 10]);
-		}
+		add(1000);
 		
 		setInterval(enterFrame, 1000 / 60);
 		document.getElementById("c").addEventListener("mousemove", move);
+		document.getElementById("c").addEventListener("click", click);
 		function move(e) {
 			vs[0][0]=e.pageX-document.getElementById("c").offsetLeft-232;
 			vs[0][1]=e.pageY-document.getElementById("c").offsetTop-232;
 		}
+		
+		function click(e){add(1000);}
+		
+		function add(num) {
+			while (num-->0) {
+				vs.push([0, 0, 100 + vs.length * 10]);
+			}
+			//tf.text = vs.length + "";
+			var tf =document.getElementById("tf");
+			tf.innerHTML="点击舞台增加数量 count:"+vs.length;
+		}
+		
 		var a = Math.PI * 2;
 		function enterFrame() 
 		{
@@ -32,6 +45,7 @@
 				lv = v;
 				var fz = 100 / v[2];
 				cxt.beginPath();
+				cxt.globalAlpha	=fz;
 				cxt.arc(v[0]*fz+232,v[1]*fz+232,30*fz,0,a,true);
 				cxt.stroke();
 				cxt.closePath();

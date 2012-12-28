@@ -16,10 +16,30 @@
 			</folderitem>
 		</project>
 	</projects>
+	<open_files>
+		<docitem>
+			<path>src\test.java</path>
+			<source>true</source>
+			<index>0</index>
+			<active>true</active>
+		</docitem>
+	</open_files>
 	<symboltables>
 		<symboltable>
-			<path>..\..\..\..\Desktop\TestJava.java.sdk</path>
+			<path>C:\Program Files\Java\jdk1.7.0_04\src.zip!java\awt\Stroke.java.sdk</path>
 			<symbols/>
+		</symboltable>
+		<symboltable>
+			<path>C:\Program Files\Java\jdk1.7.0_04\src.zip!java\awt\BasicStroke.java.sdk</path>
+			<symbols/>
+		</symboltable>
+		<symboltable>
+			<path>src\test.java.sdk</path>
+			<symbols>
+				<symbol>TestJava</symbol>
+				<symbol>Vector3D</symbol>
+				<symbol>test</symbol>
+			</symbols>
 		</symboltable>
 	</symboltables>
 </workspace_user>

@@ -10,6 +10,7 @@
 import java.awt.*;
 import java.applet.*;
 import javax.swing.*;
+import java.awt.event.*;
 
 public class test extends Applet {
 	
@@ -32,20 +33,35 @@ public class test extends Applet {
 class TestJava extends JPanel implements Runnable{
 
 	private Thread thread;
-	private int c=1000;
-	private Vector3D[] vs=new Vector3D[c];
+	private Vector3D[] vs;
+	private Label label=new Label("java3d");
     public TestJava() {
     	(thread = new Thread(this)).start();
     	setBackground(new Color(0xffffff));
     	setSize(400,400);
-    	for (int i=0; i < c;i++ ) {
-			Vector3D v=new Vector3D();
-			v.x=0;
-			v.y=0;
-			v.z=100+i*10;
+    	addP(1000);
+		add(label);
+		addMouseListener(new MouseAdapter(){
+			@Override
+			public void mouseClicked(MouseEvent e){
+				addP(1000);
+			}
+		});
+    }
+    
+    private void addP(int num){
+    	if(vs==null)vs=new Vector3D[num];
+    	else vs=new Vector3D[num+vs.length];
+    	for(int i=0;i<vs.length;i++){
+    		Vector3D v=new Vector3D();
+    		v.x=0;
+    		v.y=0;
+    		v.z=100 + i * 10;
 			vs[i]=v;
 		}
+		label.setText("count:"+vs.length);
     }
+    
     @Override
     public void paintComponent(Graphics g){
     	super.paintComponent(g);
@@ -61,13 +77,14 @@ class TestJava extends JPanel implements Runnable{
 		
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
     	
-		for (int i=0;i<c;i++){
+		for (int i=0,len =vs.length;i<len;i++){
 			Vector3D v = vs[i];
 			v.x += (lv.x - v.x) * .6;
 			v.y += (lv.y - v.y) * .6;
 			lv = v;
 			float fz = 100 / v.z;
 			float r = 30*fz;
+			g2d.setColor(new Color(0,0,0,fz));
 			g2d.drawArc((int)(v.x*fz+200-r),(int)(v.y*fz+200-r),(int)r*2,(int)r*2,0,360);
 		}
     }
