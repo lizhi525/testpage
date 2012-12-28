@@ -32,7 +32,7 @@ public class test extends Applet {
 class TestJava extends JPanel implements Runnable{
 
 	private Thread thread;
-	private int c=5000;
+	private int c=1000;
 	private Vector3D[] vs=new Vector3D[c];
     public TestJava() {
     	(thread = new Thread(this)).start();
