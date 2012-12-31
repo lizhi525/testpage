@@ -16,4 +16,22 @@
 			</folderitem>
 		</project>
 	</projects>
+	<open_files>
+		<docitem>
+			<path>src\test.java</path>
+			<source>true</source>
+			<index>0</index>
+			<active>true</active>
+		</docitem>
+	</open_files>
+	<symboltables>
+		<symboltable>
+			<path>src\test.java.sdk</path>
+			<symbols>
+				<symbol>TestJava</symbol>
+				<symbol>Vector3D</symbol>
+				<symbol>test</symbol>
+			</symbols>
+		</symboltable>
+	</symboltables>
 </workspace_user>

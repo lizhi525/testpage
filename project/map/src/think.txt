@@ -1,4 +1,12 @@
-server
-players
-client --> server path
-server --> client path
+main
+module
+net
+    p2p
+	loader
+	     loadergroup cncompcalbak sort 
+viewcore
+    settexture vconst fconst draw setprogroum setblend setvbuff
+	gpuui batch
+	tile  nobatch
+	sprite nobatch calbak
+uicore

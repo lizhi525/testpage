@@ -1,4 +1,4 @@
-package  
+package  test
 {
 	import flash.events.Event;
 	import flash.events.NetStatusEvent;
