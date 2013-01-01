@@ -10,8 +10,7 @@ package a2d
 	 */
 	public class Texture2D 
 	{
-		public var image:BitmapData;
-		public var texture:TextureBase;
+		public var texture:TextureCreator;
 		public var width:Number;
 		public var height:Number;
 		
@@ -22,15 +21,10 @@ package a2d
 		
 		public var offsetX:Number = 0;
 		public var offsetY:Number = 0;
-		public function Texture2D(image:BitmapData,width:Number,height:Number) 
+		public function Texture2D(width:Number,height:Number) 
 		{
 			this.height = height;
 			this.width = width;
-			this.image = image;
-		}
-		public function update():void {
-			texture = A2D.c3d.createRectangleTexture(image.width, image.height,Context3DTextureFormat.BGRA, false);
-			(texture as RectangleTexture).uploadFromBitmapData(image);
 		}
 		
 	}
