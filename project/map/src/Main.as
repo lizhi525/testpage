@@ -9,6 +9,7 @@ package
 	import a2d.SpriteData;
 	import a2d.Texture2D;
 	import a2d.TextureCreator;
+	import a2d.TileLayer;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
@@ -35,19 +36,18 @@ package
 		
 		private function init():void 
 		{
+			var tileLayer:Layer = d2.createLayer(new TileLayer(40, 40));
 			var layer:Layer = d2.createLayer();
-			var bmd:BitmapData = new BitmapData(100, 100, false);
+			var bmd:BitmapData = new BitmapData(320, 328, false);
 			bmd.perlinNoise(100, 100, 10, 2, true, true);
-			[Embed(source = "t.png")]var c:Class;
-			var texture:Texture2D = new Texture2D(320 / 2, 328);
-			texture.texture = new TextureCreator;
-			var create:TextureCreator = texture.texture;
-			texture.texture.image = (new c as Bitmap).bitmapData;
-			texture.texture.create();
+			
+			//var texture:Texture2D = Texture2D.fromBmd(bmd,320 / 2, 328);
+			var texture:Texture2D = Texture2D.fromURL("map/caixiashan/0_0.jpg",320 / 2, 328);
 			texture.tw = .5;
 			texture.tx = .5;
 			texture.offsetX = 320 / 4;
 			texture.offsetY = 328 / 2;
+			
 			var c1:int = 1;
 			while(c1-->0){
 				image = new Image2D(texture);
@@ -65,8 +65,7 @@ package
 			frame.texture = texture;
 			data.frames.push(frame);
 			
-			texture = new Texture2D(320 / 2, 328);
-			texture.texture = create;
+			texture = texture.clone();
 			texture.tw = .5;
 			texture.tx = 0;
 			texture.offsetX = 320 / 4;
@@ -81,7 +80,7 @@ package
 			layer.children.push(sprite);
 			addEventListener(Event.ENTER_FRAME, enterFrame);
 			
-			c1 = 1000;
+			c1 = 50000;
 			while(c1-->0){
 				sprite = new Sprite2D;
 				sprite.x = stage.stageWidth*Math.random();

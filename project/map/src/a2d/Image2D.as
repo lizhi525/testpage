@@ -28,9 +28,6 @@ package a2d
 					changed = false;
 				}
 				
-				A2D.c3d.setVertexBufferAt(0, A2D.vbuff, 0, "float3");
-				A2D.c3d.setVertexBufferAt(1, A2D.vbuff, 3, "float2");
-				A2D.c3d.setProgram(A2D.progrom);
 				A2D.c3d.setTextureAt(0, texture.texture.texture);
 				A2D.c3d.setProgramConstantsFromVector(Context3DProgramType.VERTEX, 0, matrix);
 				A2D.c3d.drawTriangles(A2D.indexbuff);

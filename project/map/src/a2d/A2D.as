@@ -74,8 +74,8 @@ package a2d
 			c3d.present();
 		}
 		
-		public function createLayer():Layer {
-			var layer:Layer = new Layer;
+		public function createLayer(layer:Layer=null):Layer {
+			layer=layer|| new Layer;
 			children.push(layer);
 			return layer;
 		}

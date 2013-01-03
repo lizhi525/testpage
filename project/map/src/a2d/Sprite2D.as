@@ -6,9 +6,11 @@ package a2d
 	 */
 	public class Sprite2D extends Image2D
 	{
+		//以名字为key的动画字典
 		private var sprites:Object = { };
 		private var lastFrame:int = -1;
 		private var frame:Number = -1;
+		//每次增加的帧数 默认为1
 		public var adder:Number = 1;
 		private var spriteName:String;
 		public function Sprite2D() 
